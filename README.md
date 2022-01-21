@@ -1,4 +1,5 @@
 # mnist network 1.0
+ create python file
  run this code
  import mnist_data as mnist
  import network as nn
