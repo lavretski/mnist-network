@@ -57,7 +57,7 @@ class Network:
                 pass
             yield (i, i+m)
     
-    def stochastic_gradient_descent(self, data, labels, epoch, learning_rate, m, data_test = [], labels_test = []):
+    def SGD(self, data, labels, epoch, learning_rate, m, data_test = [], labels_test = []):
         for i in range(epoch):
             items = list(zip(data, labels))
             random.shuffle(items)
