@@ -4,8 +4,8 @@ import random
 
 normalize_pictures = 1/3000
 
-f = gzip.open('train-images-idx3-ubyte.gz','r')
-f_test = gzip.open('t10k-images-idx3-ubyte.gz','r')
+f = gzip.open('data/train-images-idx3-ubyte.gz','r')
+f_test = gzip.open('data/t10k-images-idx3-ubyte.gz','r')
 
 image_size = 28
 num_images = 60000
@@ -24,12 +24,12 @@ data_test = np.frombuffer(buf, dtype=np.uint8).astype(np.float32)
 data_test = data_test.reshape(num_images, image_size, image_size, 1)
 data_test = data_test*normalize_pictures
 
-f = gzip.open('train-labels-idx1-ubyte.gz','r')
+f = gzip.open('data/train-labels-idx1-ubyte.gz','r')
 f.read(8)
 buf = f.read(60000)
 labels = np.frombuffer(buf, dtype=np.uint8).astype(np.int64)
 
-f_test = gzip.open('t10k-labels-idx1-ubyte.gz','r')
+f_test = gzip.open('data/t10k-labels-idx1-ubyte.gz','r')
 f_test.read(8)
 buf = f_test.read(10000)
 labels_test = np.frombuffer(buf, dtype=np.uint8).astype(np.int64)
